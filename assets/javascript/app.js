@@ -21,33 +21,33 @@ var answerRadio5;
 var questions = {
 
 	question1: {
-		question: "Who is Kim Kardashian's husband",
+		question: "Who is Kim Kardashian's husband?",
 		answers: ["David Letterman", "Kanye West", "Barak Obama", "Michael Jordan"],
 		rightAnswer: ["q1a1", "q1a2", "q1a3", "q1a4"]
 	},
 
 	question2: {
-		question: "question 2 queston",
-		answers: ["q2a1", "q2a2", "q2a3", "q2a4"],
-		rightAnswer: "q2a1"
+		question: "How many kardashian sisters are there?",
+		answers: ["5", "2", "4", "3"],
+		rightAnswer: ["q2a1", "q2a2", "q2a3", "q2a4"]
 	},
 
 	question3: {
-		question: "question 3 queston",
-		answers: ["q3a1", "q3a2", "q3a3", "q3a4"],
-		rightAnswer: "q3a4"
+		question: "How many Kardashian brothers are there?",
+		answers: ["0", "2", "4", "1"],
+		rightAnswer: ["q3a1", "q3a2", "q3a3", "q3a4"]
 	},
 
 	question4: {
-		question: "question 4 queston",
-		answers: ["q4a1", "q4a2", "q4a3", "q4a4"],
-		rightAnswer: "q4a2"
+		question: "How many of the sisters are currently pregnant?",
+		answers: ["2", "who cares", "0", "1"],
+		rightAnswer: ["q4a1", "q4a2", "q4a3", "q4a4"]
 	},
 
 	question5: {
-		question: "question 5 queston",
-		answers: ["q5a1", "q5a2", "q5a3", "q5a4"],
-		rightAnswer: "q5a2"
+		question: "Where does Khloe live?",
+		answers: ["Calabasas", "Cleveland", "Chicago", "Cincinnati"],
+		rightAnswer: ["q5a1", "q5a2", "q5a3", "q5a4"]
 	}
 };
 
@@ -67,28 +67,28 @@ function loadQuestions(){
 	$(".quizContentArea").append("<hr><p>" + questions.question2.question + "</p>");
 	
 	for(var i=0; i < questions.question2.answers.length; i++){
-		answerRadio2 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question2.answers[i] + " id=" + questions.question2.answers[i] + ">");
+		answerRadio2 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question2.answers[i] + " id=" + questions.question2.rightAnswer[i] + ">");
 		answerRadio2.append(questions.question2.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question3.question + "</p>");
 	
 	for(var i=0; i < questions.question3.answers.length; i++){
-		answerRadio3 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question3.answers[i] + " id=" + questions.question3.answers[i] + ">");
+		answerRadio3 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question3.answers[i] + " id=" + questions.question3.rightAnswer[i] + ">");
 		answerRadio3.append(questions.question3.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question4.question + "</p>");
 	
 	for(var i=0; i < questions.question4.answers.length; i++){
-		answerRadio4 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question4.answers[i] + " id=" + questions.question4.answers[i] + ">");
+		answerRadio4 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question4.answers[i] + " id=" + questions.question4.rightAnswer[i] + ">");
 		answerRadio4.append(questions.question4.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question5.question + "</p>");
 	
 	for(var i=0; i < questions.question5.answers.length; i++){
-		answerRadio5 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question5.answers[i] + " id=" + questions.question5.answers[i] + ">");
+		answerRadio5 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question5.answers[i] + " id=" + questions.question5.rightAnswer[i] + ">");
 		answerRadio5.append(questions.question5.answers[i]);
 	}
 }
