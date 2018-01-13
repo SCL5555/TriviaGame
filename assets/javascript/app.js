@@ -21,9 +21,9 @@ var answerRadio5;
 var questions = {
 
 	question1: {
-		question: "question 1 queston",
-		answers: ["q1a1", "q1a2", "q1a3", "q1a4"],
-		rightAnswer: "q1a2"
+		question: "Who is Kim Kardashian's husband",
+		answers: ["David Letterman", "Kanye West", "Barak Obama", "Michael Jordan"],
+		rightAnswer: ["q1a1", "q1a2", "q1a3", "q1a4"]
 	},
 
 	question2: {
@@ -58,7 +58,7 @@ function loadQuestions(){
 	$(".quizContentArea").append("<p>" + questions.question1.question + "</p>");
 	
 	for(var i=0; i < questions.question1.answers.length; i++){
-		answerRadio1 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question1.answers[i] + " id=" + questions.question1.answers[i] + ">");
+		answerRadio1 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question1.answers[i] + " id=" + questions.question1.rightAnswer[i] + ">");
 		answerRadio1.append(questions.question1.answers[i]);
 
 		$(".quizContentArea").append(answerRadio1);
@@ -155,16 +155,16 @@ function checkAnswer5(){
 
 function gameOver(){
 	$(".quizContentArea").empty();
-	$(".quizContentArea").append(correctAnswers);
-	$(".quizContentArea").append(inCorrectAnswers);
-	$(".quizContentArea").append(unanswered);
+	$(".quizContentArea").append("<p>Correct Answers: " + correctAnswers + "</p>");
+	$(".quizContentArea").append("<p>Inorrect Answers: " + inCorrectAnswers + "</p>");
+	$(".quizContentArea").append("<p>Unanswered Questions: " + unanswered + "</p>");
 	$(".timerDisplay").html("<h1>Game Over!</h1>");
 }
 
 function countDown(){
-	$(".timerDisplay").html("<h1>" + seconds + " seconds left </h1>");
+	$(".timerDisplay").html("<h1>Time Remaining: " + seconds + " seconds left </h1>");
 	seconds--;
-	if (seconds>0){
+	if (seconds>-1){
 
 		setTimeout(countDown,1000);
 	}
@@ -187,7 +187,7 @@ $("#start").on("click", function() {
 	// $("#start").animate({ opacity: "0.00" });
 	$("#start").remove();
 	setTimeout(countDown,1000);
-	loadQuestions();
+	setTimeout(loadQuestions, 1000);
 });
 
 });
