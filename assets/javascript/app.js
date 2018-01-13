@@ -22,7 +22,7 @@ var questions = {
 
 	question1: {
 		question: "Who is Kim Kardashian's husband?",
-		answers: ["David Letterman", "Kanye West", "Barak Obama", "Michael Jordan"],
+		answers: ["David Letterman", "Kanye West", "Barack Obama", "Michael Jordan"],
 		rightAnswer: ["q1a1", "q1a2", "q1a3", "q1a4"]
 	},
 
