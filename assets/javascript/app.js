@@ -1,14 +1,11 @@
 
-	// <p id="question1"> Question 1 content</p>
- // <input type="radio" name="gender" value="other"> Other
-
 $(document).ready(function() { 
 
 
 var correctAnswers = 0;
 var inCorrectAnswers = 0;
 var unanswered = 0;
-var seconds = 10;
+var seconds = 25;
 var intervalId;
 var answerRadio1;
 var answerRadio2;
@@ -58,7 +55,7 @@ function loadQuestions(){
 	$(".quizContentArea").append("<p>" + questions.question1.question + "</p>");
 	
 	for(var i=0; i < questions.question1.answers.length; i++){
-		answerRadio1 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question1.answers[i] + " id=" + questions.question1.rightAnswer[i] + ">");
+		answerRadio1 = $(".quizContentArea").append("<br /> <input type='radio' name = 'radio1' value=" + questions.question1.answers[i] + " id=" + questions.question1.rightAnswer[i] + ">");
 		answerRadio1.append(questions.question1.answers[i]);
 
 		$(".quizContentArea").append(answerRadio1);
@@ -67,28 +64,28 @@ function loadQuestions(){
 	$(".quizContentArea").append("<hr><p>" + questions.question2.question + "</p>");
 	
 	for(var i=0; i < questions.question2.answers.length; i++){
-		answerRadio2 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question2.answers[i] + " id=" + questions.question2.rightAnswer[i] + ">");
+		answerRadio2 = $(".quizContentArea").append("<br /> <input type='radio' name = 'radio2' value=" + questions.question2.answers[i] + " id=" + questions.question2.rightAnswer[i] + ">");
 		answerRadio2.append(questions.question2.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question3.question + "</p>");
 	
 	for(var i=0; i < questions.question3.answers.length; i++){
-		answerRadio3 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question3.answers[i] + " id=" + questions.question3.rightAnswer[i] + ">");
+		answerRadio3 = $(".quizContentArea").append("<br /> <input type='radio' name= 'radio3' value=" + questions.question3.answers[i] + " id=" + questions.question3.rightAnswer[i] + ">");
 		answerRadio3.append(questions.question3.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question4.question + "</p>");
 	
 	for(var i=0; i < questions.question4.answers.length; i++){
-		answerRadio4 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question4.answers[i] + " id=" + questions.question4.rightAnswer[i] + ">");
+		answerRadio4 = $(".quizContentArea").append("<br /> <input type='radio' name = 'radio4' value=" + questions.question4.answers[i] + " id=" + questions.question4.rightAnswer[i] + ">");
 		answerRadio4.append(questions.question4.answers[i]);
 	}
 
 	$(".quizContentArea").append("<hr><p>" + questions.question5.question + "</p>");
 	
 	for(var i=0; i < questions.question5.answers.length; i++){
-		answerRadio5 = $(".quizContentArea").append("<br /> <input type='radio' value=" + questions.question5.answers[i] + " id=" + questions.question5.rightAnswer[i] + ">");
+		answerRadio5 = $(".quizContentArea").append("<br /> <input type='radio' name = 'radio5' value=" + questions.question5.answers[i] + " id=" + questions.question5.rightAnswer[i] + ">");
 		answerRadio5.append(questions.question5.answers[i]);
 	}
 }
@@ -156,7 +153,7 @@ function checkAnswer5(){
 function gameOver(){
 	$(".quizContentArea").empty();
 	$(".quizContentArea").append("<p>Correct Answers: " + correctAnswers + "</p>");
-	$(".quizContentArea").append("<p>Inorrect Answers: " + inCorrectAnswers + "</p>");
+	$(".quizContentArea").append("<p>Incorrect Answers: " + inCorrectAnswers + "</p>");
 	$(".quizContentArea").append("<p>Unanswered Questions: " + unanswered + "</p>");
 	$(".timerDisplay").html("<h1>Game Over!</h1>");
 }
@@ -175,10 +172,6 @@ function countDown(){
 		checkAnswer3();
 		checkAnswer4();
 		checkAnswer5();
-		console.log($("#q1a2"));
-		console.log(correctAnswers);
-		console.log(inCorrectAnswers);
-		console.log(unanswered);
 		gameOver();
 	}
 }
