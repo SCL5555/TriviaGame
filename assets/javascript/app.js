@@ -177,7 +177,6 @@ function countDown(){
 }
 
 $("#start").on("click", function() {
-	// $("#start").animate({ opacity: "0.00" });
 	$("#start").remove();
 	setTimeout(countDown,1000);
 	setTimeout(loadQuestions, 1000);
