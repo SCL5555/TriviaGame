@@ -9,6 +9,8 @@ To get started you press the New Game Button.  This will activate our on click e
 
 Once the timer is up the app will call each checkAnswer function and then load the gameOver function, which displays the score to the user.
 
+https://scl5555.github.io/TriviaGame/index.html
+
 
 # Help
 Users can get help with this project be reaching out to the owner of the github repo
